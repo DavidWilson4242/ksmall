@@ -12,7 +12,6 @@ static size_t largest_index(int *, size_t);
 static size_t partition(int *, size_t, size_t);
 static size_t selection(int *, size_t, size_t);
 static size_t pick_index(int *, size_t);
-int ksmall(int *, size_t, size_t);
 
 static void swap(int *a, int *b) {
   int tmp = *a;
