@@ -141,8 +141,7 @@ static size_t pick_index(int *A, size_t N) {
   int mbuf[5];
   size_t median_index;
 
-  B = static_cast<int *>(malloc(sizeof(int) * N/5));
-  assert(B);
+  B = new int[N/5];
 
   for (size_t i = 0; i < N/5; i++) {
     for (size_t j = 0; j < 5; j++) {
@@ -153,7 +152,7 @@ static size_t pick_index(int *A, size_t N) {
   }
 
   median_index = selection(B, N/5, N/10);
-  free(B);
+  delete[] B;
 
   return median_index;
 }
